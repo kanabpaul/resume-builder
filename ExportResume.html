@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Export Resume as PDF</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <div>pdf preview</div>
+</head>
+<body>
+
+<button onclick="createCustomPDF()">Create Custom PDF</button>
+
+<script>
+  function createCustomPDF() {
+    // Initialize jsPDF
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Build Resume
+    const margin = 15;
+    const lineSpacing = 15;
+    let y = margin;
+
+    // Add Candidate Name
+    doc.text('Kanab Paul', margin, y);
+    y += lineSpacing;
+
+    // Add Candidate Job Title
+    doc.text('Lead Software Engineer', margin, y);
+    y += lineSpacing;
+
+    // Add Candidate Address
+    doc.text('Address: Bengaluru, India 560082', margin, y);
+    y += lineSpacing;
+
+    // Add Candidate Mobile
+    doc.text('Mobile: +91 8546831669', margin, y);
+    y += lineSpacing;
+
+    // Add Candidate E-mail
+    doc.text('E-mail: paul.kanab@gmail.com', margin, y);
+    y += lineSpacing;
+
+    // Add Candidate LinkedIn
+    doc.text('LinkedIn: https://www.linkedin.com/in/kanab-paul', margin, y);
+    y += lineSpacing;
+
+    // Add delimeter / Line
+    doc.line(margin, y,-1,-1); 
+
+    // Add Candidate Summry
+    doc.text('Highly skilled Lead Software Engineer with 15 years of experience in software development, specializing in building and maintaining complex web systems. Proven expertise in leading development teams and delivering innovative, AI-integrated software products that prioritize ease of use and provide use-case-driven features. Demonstrated ability to manage and deliver complex engineering projects on time and within budget, with a focus on driving organizational growth through technical excellence and efficiency. A collaborative leader with strong problem-solving skills, exceptional communication abilities, and a commitment to delivering high-quality results that align with business goals.', margin, y,{
+      maxWidth: 170,  // Maximum width in mm for word wrapping
+      align: 'left'
+    });
+    y += lineSpacing;
+
+    // Add Candidate Summry
+    doc.text('Highly skilled Lead Software Engineer with 15 years of experience in software development, specializing in building and maintaining complex web systems. Proven expertise in leading development teams and delivering innovative, AI-integrated software products that prioritize ease of use and provide use-case-driven features. Demonstrated ability to manage and deliver complex engineering projects on time and within budget, with a focus on driving organizational growth through technical excellence and efficiency. A collaborative leader with strong problem-solving skills, exceptional communication abilities, and a commitment to delivering high-quality results that align with business goals.', margin, y);
+    y += lineSpacing;
+
+
+    
+   
+
+    // Save the PDF with the custom filename
+    doc.save('kanab-paul-resume.pdf');
+  }
+</script>
+
+</body>
+</html>
