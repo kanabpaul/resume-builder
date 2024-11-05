@@ -30,3 +30,10 @@ Design Aspects
     Template / Layout
     Font
     color palette
+
+
+Solution
+    Simple HTML + Chrome Browser Save as PDF
+        Build Simple HTML 
+            get text from zety
+            get html from chat gpt
